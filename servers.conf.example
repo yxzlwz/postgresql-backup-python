@@ -1,0 +1,3 @@
+#name(anything that make it able to recognize)	host	port	username	password	database
+#Careful: Must split the name with \t(tab) rather than spaces!!!
+test	127.0.0.1	5432	yxzl	123456	*
