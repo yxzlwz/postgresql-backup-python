@@ -42,7 +42,7 @@ if __name__ == "__main__":
             cmd = f"PGPASSWORD={password} pg_dumpall -h {host} -p {port} -U {user} > {file.resolve()}"
         else:
             file = dir / f"{get_time()}.{database}.sql.temp"
-            cmd = f"PGPASSWORD={password} pg_dump -h {host} -p {port} -U {user} -f {file.resolve()} {database}"
+            cmd = f"PGPASSWORD={password} pg_dump --no-owner --no-privileges-h {host} -p {port} -U {user} -f {file.resolve()} {database}"
 
         if run_cmd(cmd) == 0:
             if database == "*":
